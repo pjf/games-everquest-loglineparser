@@ -235,6 +235,9 @@ sub all_possible_line_types
    }
 
 ## returns all possible keys from the set of all parsed line hash refs
+## 'time_stamp' and 'value' are special-cased, as they're automatically
+## added after the line is parsed.
+
 sub all_possible_keys
    {
 
@@ -248,7 +251,7 @@ sub all_possible_keys
          }
       }
 
-   return ( sort (keys %all_keys, 'time_stamp') );
+   return ( sort (keys %all_keys, 'time_stamp', 'value') );
 
    }
 
